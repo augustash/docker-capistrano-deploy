@@ -1,0 +1,12 @@
+version: "2"
+services:
+  capistrano:
+    build:
+      context: .
+    image: augustash/capistrano:legacy
+    volumes:
+      - .:/src
+    environment:
+      - SKIP_UPDATE=true
+    env_file:
+      - ./capistrano.env
